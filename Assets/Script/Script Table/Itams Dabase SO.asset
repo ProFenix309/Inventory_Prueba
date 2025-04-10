@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21d475859e531409639626a8d2d6dd, type: 3}
   m_Name: Itams Dabase SO
   m_EditorClassIdentifier: 
-  _dataBase:
+  _tems:
   - {fileID: 11400000, guid: a36f900e5f7cb5f42befb8688281f5f7, type: 2}
   - {fileID: 11400000, guid: 156aa94e063b0ec458f26d005d39d7c8, type: 2}
   - {fileID: 11400000, guid: 5eab376375fc1fb4e80e1d8bceb5a7a4, type: 2}

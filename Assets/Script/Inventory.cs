@@ -3,41 +3,54 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public delegate void InventoryUpdateDelegate();
+    public InventoryUpdateDelegate ItemUpdate;
+    public InventoryUpdateDelegate ItemRemoved;
+    public InventoryUpdateDelegate ItemAdded;
+
     Dictionary<int, int> _items = new()
     {
         { 3, 15},
         { 7, 3}
     };
 
+    public Dictionary<int, int> Items { get => _items; set => _items = value; }
 
     public void AddItem(int id, int amout)
     {
-        if (!_items.ContainsKey(id))
+        if (!Items.ContainsKey(id))
         {
-            _items.Add(id, amout);
+            Items.Add(id, amout);
+            ItemAdded?.Invoke();
         }
         else
         {
-            _items[id] += amout;
+            Items[id] += amout;
+            ItemUpdate?.Invoke();
         }
     }
 
     public void RemoveItem(int id, int amout)
     {
-        if (_items.ContainsKey(id))
+        if (Items.ContainsKey(id))
         {
-            _items[id] -= amout;
+            Items[id] -= amout;
 
-            if (_items[id] <= 0)
+            if (Items[id] <= 0)
             {
-                _items.Remove(id);
+                Items.Remove(id);
+                ItemRemoved?.Invoke();
+            }
+            else
+            {
+                ItemUpdate?.Invoke();
             }
         }
     }
 
     public void SowInventory()
     {
-        foreach (var item in _items)
+        foreach (var item in Items)
         {
             Debug.Log(item);
         }
