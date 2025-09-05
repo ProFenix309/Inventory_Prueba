@@ -16,6 +16,7 @@ public class IventoryUIHandle : MonoBehaviour
     List<GameObject> instantiateButtonList = new();
 
     [Space]
+    [Header("Preview Panel")]
     [SerializeField] Image itemPreviewIcon;
     [SerializeField] TextMeshProUGUI itemPreviewAmount;
     [SerializeField] TextMeshProUGUI itemPreviewName;

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e828db92f59c494694d1f7588534e32, type: 3}
+  m_Name: DataBase
+  m_EditorClassIdentifier: 
+  dataBase:
+  - nameItem: Piedra
+    description: Se utiliza para distraer a los enemigos
+    ID: 0
+    mazStack: 10
+    acumulative: 1
+    tipo: 0
+    icon: {fileID: 0}
+    item: {fileID: 0}
